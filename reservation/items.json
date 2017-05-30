@@ -1,0 +1,27 @@
+{ "_id" : { "$oid" : "591aae6dd937af078f9916f4" }, "title" : "Canon 5D", "category" : "Camera", "priceHour" : 10, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f9916f5" }, "title" : "Broncolor 500", "category" : "Lights", "priceHour" : 12, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f9916f6" }, "title" : "C-stand", "category" : "Stands", "priceHour" : 3, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f9916f7" }, "title" : "Sony A7s", "category" : "Camera", "priceHour" : 10, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f9916f8" }, "title" : "Elinchrome 500", "category" : "Lights", "priceHour" : 13, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f9916f9" }, "title" : "Manfrotto", "category" : "Stands", "priceHour" : 3, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f9916fa" }, "title" : "RED Dragon", "category" : "Camera", "priceHour" : 50, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f9916fb" }, "title" : "HMI 500w", "category" : "Lights", "priceHour" : 12, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f9916fc" }, "title" : "Boom-pole", "category" : "Stands", "priceHour" : 5, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f9916fd" }, "title" : "Arri Alexa", "category" : "Camera", "priceHour" : 100, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f9916fe" }, "title" : "Arri 2kw Fresnel", "category" : "Lights", "priceHour" : 12, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f9916ff" }, "title" : "Sony FS7", "category" : "Camera", "priceHour" : 40, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f991700" }, "title" : "The Light Velvet", "category" : "Lights", "priceHour" : 8, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f991701" }, "title" : "Dedo-light 175w", "category" : "Lights", "priceHour" : 20, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f991702" }, "title" : "Canon 7D", "category" : "Camera", "priceHour" : 6, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f991703" }, "title" : "Joker Bug 1kW", "category" : "Lights", "priceHour" : 25, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f991704" }, "title" : "Go-Pro", "category" : "Camera", "priceHour" : 10, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f991705" }, "title" : "Kinoflo 4x4", "category" : "Lights", "priceHour" : 6, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f991706" }, "title" : "Phantom", "category" : "Camera", "priceHour" : 150, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f991707" }, "title" : "Kinoflo 2x2", "category" : "Lights", "priceHour" : 8, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f991708" }, "title" : "C-stand", "category" : "Stands", "priceHour" : 3, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f991709" }, "title" : "Canon 5D", "category" : "Camera", "priceHour" : 10, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f99170a" }, "title" : "Broncolor 500", "category" : "Lights", "priceHour" : 12, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f99170b" }, "title" : "C-stand", "category" : "Stands", "priceHour" : 3, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f99170c" }, "title" : "Canon 5D", "category" : "Camera", "priceHour" : 10, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f99170d" }, "title" : "Broncolor 500", "category" : "Lights", "priceHour" : 12, "__v" : 0 }
+{ "_id" : { "$oid" : "591aae6dd937af078f99170e" }, "title" : "C-stand", "category" : "Stands", "priceHour" : 3, "__v" : 0 }
