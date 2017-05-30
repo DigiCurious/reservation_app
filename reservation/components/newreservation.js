@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import ReactDom from 'react-dom';
-import SearchBar from './components/searchBar';
-import ItemList from './components/itemList';
-import ReservationList from './components/reservationList';
+import SearchBar from './searchBar';
+import ItemList from './itemList';
+import ReservationList from './reservationList';
 
 class NewReservation extends Component{
  constructor(props){

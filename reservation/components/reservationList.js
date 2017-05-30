@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ReservedItem from 'reservedItem';
+import ReservedItem from './reservedItem';
 
 const ReservationList = (props) => {
         

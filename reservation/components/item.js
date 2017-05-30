@@ -18,4 +18,3 @@ const Item = (onReservation) => {
   };
 
 export default Item;
-export default Category;
