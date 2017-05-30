@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+
+<div class="container">
+    <h1>Add New Item</h1>
+    <form action="/admin/add" method="POST">
+        <div class="form-group">
+            <label>Category</label>
+            <select class="form-control" type="select" name="item[category]">
+                <option value="Lights">Lights</option>
+                <option value="Camera">Cameras</option>
+                <option value="Stands">Stands</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Title</label>
+            <input class="form-control" type="text" name="item[title]" placeholder="Title">
+        </div>
+        <div class="form-group">
+            <label>Price/Hour</label>
+            <input class="form-control" type="number" name="item[priceHour]">
+        </div>
+        <button type="submit" class="btn btn-block">Add</button>
+    </form>
+</div>
+
+<% include ./partials/footer %>

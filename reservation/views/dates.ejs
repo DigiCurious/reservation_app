@@ -1,0 +1,19 @@
+<% include ./partials/header %>
+
+<div class="container">
+<form action="/reservation/new" method="POST">
+    <div class="form-group">
+        <label>Pick-Up Time</label>
+        <input class="form-control" type="datetime-local" name="from" value='2017-05-27T12:00'>
+    </div>
+    <div class="form-group">
+        <label>Return Time</label>
+        <input class="form-control" type="datetime-local" name="to" value='2017-05-28T12:00'>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-block">confirm</button>
+    </div>
+</form>
+</div>
+
+<% include ./partials/footer %>

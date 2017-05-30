@@ -1,0 +1,116 @@
+<% include ./partials/header %>
+
+<div class="container">
+   
+    <form action="/reservation/<%=batchId%>?_method=PUT" method="POST">
+         <table class="table">
+            <tbody class="table table-hover">
+                <tr>
+                    <th>Pick-Up Time
+                    </th>
+                    <th>Return Time
+                    </th>
+                </tr>
+                <tr>
+                    <td><%=reservations[0].from%>
+                    <input class="form-control" type="hidden" value="<%=reservations[0].from%>" name="from">
+                    </td>
+                    <td><%=reservations[0].to%>
+                    <input class="form-control" type="hidden" value="<%=reservations[0].to%>" name="to">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <a href="/reservation/new/dates" class="btn btn-default">Change dates</a>
+        <h4>Following items are available for your chosen dates</h4>
+        
+        <table class="table">
+            <tbody class="table table-hover">
+               
+                <tr>
+                    <td>CAMERAS</td><td></td>
+                </tr>
+                <% items.forEach(function(item){ %>
+                    <%if(item.category == "Camera"){%>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-inline">
+                                            <label>
+                                                <input type="checkbox" name="item"value="<%=item._id%>"
+                                                <%= inReservation[item._id] ? "checked" : ""%>
+                                                >
+                                                <%=item.title%>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <%=item.priceHour%> EUR/h
+                                    </td>
+                                </tr>
+                            
+                <% } %>
+                <% }); %>
+                
+                <tr>
+                    <td>LIGHTS</td><td></td>
+                </tr>
+                <% items.forEach(function(item){ %>
+                    <%if(item.category == "Lights"){%>
+                        
+                                
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-inline">
+                                            <label>
+                                                <input type="checkbox" name="item" value="<%=item._id%>"
+                                                <%= inReservation[item._id] ? "checked" : ""%>
+                                                >
+                                                <%=item.title%>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                       
+                                                <%=item.priceHour%> EUR/h
+                                          
+                                    </td>
+                                </tr>
+                            
+                <% } %>
+                <% }); %>
+                <tr>
+                    <td>STANDS</td><td></td>
+                </tr>
+                <% items.forEach(function(item){ %>
+                    <%if(item.category == "Stands"){%>
+                        
+                                
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-inline">
+                                            <label>
+                                                <input type="checkbox" name="item" value="<%=item._id%>"
+                                                <%= inReservation[item._id] ? "checked" : ""%>
+                                                >
+                                                <%=item.title%>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                       
+                                                <%=item.priceHour%> EUR/h
+                                            
+                                    </td>
+                                </tr>
+                            
+                <% } %>
+                <% }); %>
+                
+         </tbody>
+        </table>
+        <button class="btn btn-block" type="submit">Update</input>
+    </form>
+</div>
+
+<% include ./partials/footer %>

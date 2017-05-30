@@ -1,0 +1,62 @@
+
+<div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="container">
+    
+    <h1><%=user.firstname%> <%=user.lastname%>'s reservation</h1>
+    <table class="table">
+        <tbody class="table table-hover">
+            <tr>
+                <th>From</th>
+                <th>To</th>
+            </tr>
+            <tr>
+                <td id="from"><%=reservations[0].from %></td>
+                <td id="to"><%=reservations[0].to %></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <table class="table">
+        <caption>Reserved Items</caption>
+        <tbody class="table table-hover">   
+    
+                    <tr>
+                        <th>Item</th><th>price</th>
+                    </tr>
+    
+    <%items.forEach(function(item){%>
+                    <tr>
+                        <td><a href="/<%=item._id%>"><%=item.title%></a></td><td id="pricePerHour"><%=Math.round(time*item.priceHour)%></td>
+                    </tr>
+    <% }); %>
+                    
+                    <tr>
+                        <th>Total: </th>
+                        <th id="totalPrice"><%=Math.round(total*time)%></th>
+                    </tr>
+        </tbody>
+    </table>
+     
+    
+      <!-- Your send button code -->
+      <div class="fb-send" data-href="<%=url%>">
+      </div>
+    <a class="btn btn-default" href="/">Back to catalog</a>
+    <a class="btn btn-default" href="/reservation/new/dates">Make a new reservation</a>
+</div>
+
+<script>
+   var prices = document.querySelectorAll("#pricePerHour");
+   var totalPrice = [];
+   prices.forEach(function(price){
+       totalPrice.push(price.textContent)
+   });
+</script>
