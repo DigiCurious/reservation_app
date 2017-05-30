@@ -2,10 +2,10 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-    entry: './reservation/components/newreservation.js',
+    entry: './components/newreservation.js',
 
     output: {
-        path: path.resolve(__dirname, './reservation/public/dist'),
+        path: path.resolve(__dirname, './public/dist'),
         filename: 'bundle.js'
     },
 
