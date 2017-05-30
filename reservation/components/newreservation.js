@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 import SearchBar from './searchBar';
 import ItemList from './itemList';
 import ReservationList from './reservationList';
+import MainView from './mainview.js'
 
 class NewReservation extends Component{
  constructor(props){
@@ -39,4 +40,4 @@ class NewReservation extends Component{
   }
 }
 
-ReactDom.render(<NewReservation />, document.querySelector('.container'));
+ReactDom.render(<MainView />, document.querySelector('.container'));
