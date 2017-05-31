@@ -155,12 +155,17 @@ app.get("/reservation/new/items", function(req,res){
                         console.log(err);
                     }else{
                         console.log(reservations);
+
+                        var time = (Date.parse(req.query.to) - Date.parse(req.query.from))/3600/1000;
+                        
+
                         var isReserved = reservations.reduce(function (accumulator, reservation) {
                                 accumulator[reservation.itemId] = true;
                                 return accumulator;
                             }, {});
+
                         console.log("isReserved is" + isReserved);
-                        Item.find({}, function(err, items){
+                        Item.find({}).lean().exec(function(err, items){
                             if(err){
                                 console.log(err);
                             }else{
@@ -168,7 +173,7 @@ app.get("/reservation/new/items", function(req,res){
                                     return isReserved[item._id] !== true;
                                 });
                                 console.log("available items: " + availableItems);
-                                res.render("items", {items:availableItems, from:req.query.from, to:req.query.to});
+                                res.render("items", {time: time, items:availableItems, from:req.query.from, to:req.query.to});
                             }
                         });
                         }
@@ -179,13 +184,15 @@ app.post("/reservation", isLoggedIn, function(req, res){
     var URL = "/reservation/";
     var from = req.body.from;
     var to = req.body.to;
-        
+    var id = req.body.id;
+
     var batchId = makeBatchId();
     
-    Item.find({_id: req.body.id}, function(err, reservedItems){
+    Item.find({_id: id}, function(err, reservedItems){
         if(err){
             console.log(err);
         } else {
+                console.log("reserved items: " + reservedItems)
                 reservedItems.forEach(function(item){
                         Reservation.create({}, function(err, reservation){
                         if(err){
@@ -197,6 +204,7 @@ app.post("/reservation", isLoggedIn, function(req, res){
                             reservation.to = to;
                             reservation.clientId = req.user._id;
                             reservation.save();
+                            console.log("new reservation: " + reservation)
                             }
                         });
                 });
@@ -235,6 +243,7 @@ app.get("/reservation/:batchId", function(req, res){
                                     return reserved[item._id] === true;
                                     });
                                     console.log(reservedItems);
+                                    
                                     var time = (Date.parse(reservations[0].to) - Date.parse(reservations[0].from))/3600/1000;
                                     var total = 0;
                                             

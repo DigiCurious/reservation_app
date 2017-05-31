@@ -1,28 +1,16 @@
 import React from 'react';
 
-const ReservedItem = (props, {removeReservation}, {reservedItems}) => {
-    
-    var index = reservedItems.indexOf(ReservedItem);
+const ReservedItem = (props) => {
+
+    var index = props.reservedItems.indexOf(props.item);
+    var price = props.item.priceHour * props.time;
 
 	return (
-	        <div>
-	            <tr>
-    	            <td>
-    			        <i className="glyphicon glyphicon-minus" onClick={() => removeReservation(index)} />
-    			    </td>
-    				<input  type="hidden"
-    				        value={props.item._id}
-    				        name="item"
-    				        />
-    				<td>
-    				    <h4>{props.item.title}</h4>
-    				</td>
-    				<td>
-    				    <h4>{props.item.priceHour}</h4>
-    				</td>
-	            </tr>
-		    </div>
-		); 
+            <tr>
+                <td><i className="glyphicon glyphicon-minus" onClick = {() => props.removeReservation(index, price)} />{props.item.title}</td>
+                <td><input type="hidden" value={props.item._id} name="id" />{props.item.priceHour * props.time}</td>
+            </tr>
+	); 
 };
 
 export default ReservedItem;

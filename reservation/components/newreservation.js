@@ -11,33 +11,64 @@ class NewReservation extends Component{
      
      this.state = {
       reservedItems: [],
-      filterText: ''
+      filterText: '',
+      totalPrice: 0
      };
     }
 
  render() {
+
+    var reservationList = this.state.reservedItems;
+    var price = this.state.totalPrice;
+
     return (
-    <div>
-      <div className="md-col-6">
+    <div className="row">
+      <div className="col-sm-6">
         <SearchBar
-          filterText={this.state.filterText}
+          filterText= {this.state.filterText}
+          onChange = {(term) => {this.setState({filterText: term});}}
         />
         <ItemList
           items={this.props.items}
+          time ={this.props.time}
           filterText={this.state.filterText}
-          onReservation = {(item) => this.reservedItems.push(item)}
+          onReservation = {(item, itemPrice) => {
+                                                  price += itemPrice;
+                                                  this.setState({totalPrice: price})
+                                                  reservationList.push(item);
+                                                  this.setState({reservedItems: reservationList});
+                                                }}
+          key = {"itemList"}
         />
       </div>
-      
-      <div className="md-col-6">
-        <ReservationList
-          items={this.state.reservedItems}
-          removeReservation = {(index) => this.reservedItems.splice(index, 1)}
-        />
+
+      <div className="col-sm-6">
+
+          <ReservationList
+            price = {this.state.totalPrice}
+            total={this.props.total}
+            time = {this.props.time}
+            to = {this.props.to}
+            from = {this.props.from}
+            items={this.state.reservedItems}
+            removeReservation = {(index, reservationPrice) => {
+                                      price -= reservationPrice;
+                                      this.setState({totalPrice: price})
+                                      reservationList.splice(index, 1);
+                                      this.setState({reservedItems: reservationList});
+                                }}
+          />
       </div>
     </div>
     );
   }
 }
 
-ReactDom.render(<MainView />, document.querySelector('.container'));
+
+
+ReactDom.render(<NewReservation
+                  time={window.props.time}
+                  to= {window.props.to}
+                  from= {window.props.from}
+                  items = {JSON.parse(window.props.items)}
+                  />, document.querySelector('.container'));

@@ -1,11 +1,6 @@
 import React, {Component} from 'react';
 
 class SearchBar extends Component{
-  constructor (props){
-    super(props);
-      
-    this.state = {filterText: ""};
-  }
   
   render(){
     return (
@@ -13,8 +8,8 @@ class SearchBar extends Component{
         <input
           type="text"
           placeholder="Search..."
-          value={this.state.filterText}
-          onChange={event => this.setState(event.target.value)}
+          value={this.props.filterText}
+          onChange={(event) => {this.props.onChange(event.target.value)}}
         />
       </form>
     );

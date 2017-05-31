@@ -1,20 +1,25 @@
 import React, {Component} from 'react';
 
-const Category = (props) => {
-    
-      return (<tr><th>{this.props.category}</th></tr>);
+const Item = (props) => {
 
-    
-};
+	var price = props.item.priceHour * props.time;
 
-const Item = (onReservation) => {
     return (
       <tr>
-        <td><i className="glyphicon glyphicon-plus" onClick = {() => onReservation(this.props.item)} /></td>
-        <td>{this.props.title}</td>
-        <td>{this.props.priceHour}</td>
+        <td><i className="glyphicon glyphicon-plus" onClick = {() => props.onReservation(props.item, price)} /></td>
+        <td>{props.item.title}</td>
+        <td>{props.item.priceHour}</td>
       </tr>
     );
-  };
+  }
+
+
+// const Category = (props) => {
+    
+//    return (<tr><th>{props.item.category}</th></tr>);
+
+    
+// };
 
 export default Item;
+//export {Category}; 

@@ -1,6 +1,13 @@
 <% include ./partials/header %>
 
 <div class="container"></div>
+<script>
+	window.props = {items: '<%- JSON.stringify(items) %>',
+					to: '<%- to %>',
+					from: '<%- from %>',
+					time: <%- time %>
+					};
+</script>
 <script src="/dist/bundle.js"></script>
 
 
