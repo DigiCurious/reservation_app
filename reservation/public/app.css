@@ -1,5 +1,27 @@
+
+
 .container{
     width:65%;
-    background-color: rgb(245,245,245);
+    background-color: rgb(235,235,235);
+    border: 1px solid rgb(235,235,235);
+    border-radius: 5px;
     padding: 25px;
+}
+
+h1{
+	margin-top: 0;
+}
+
+#reservation{
+	border-radius: 7px;
+	background-color: white;
+	padding: 20px;
+}
+
+.table .table{
+	background-color: rgba(235,235,235,0);
+}
+
+.table>tbody>tr>td{
+	border: none;
 }

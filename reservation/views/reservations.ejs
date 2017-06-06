@@ -14,7 +14,7 @@
             <div id="reservation">
             <h4>
                 <a href="/reservation/<%=batchId%>">
-                <%=reservationsByBatchId[batchId][0].clientId.username%>
+                <%=reservationsByBatchId[batchId][0].firstname%>
                 </a>
             </h4>
             <table class="table">
@@ -28,7 +28,7 @@
                     <%reservationsByBatchId[batchId].forEach(function (reservation) {%>
                         <tr>
                             <td></td>
-                            <td id="title"><%=reservation.itemId.title%></td>
+                            <td id="title"><span><%=reservation.title%></span></td>
                         </tr>
                         <% }); %>
                 <tr>

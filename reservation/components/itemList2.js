@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Item/*, {Category}*/ from './item';
+import Item/*, {Category}*/ from './item2';
 
 class ItemList extends Component{
     
@@ -36,10 +36,9 @@ class ItemList extends Component{
     const list = Object.keys(categories).map((category) => {
         items = categories[category].map((item)=>{
               return(
-                <Item
-                    time={this.props.time}
+                <Item2
                     item={item}
-                    onReservation={this.props.onReservation}
+                    mouseOver={this.props.mouseOver}
                     reveal={props.reveal}
                     key={item._id}
                 />

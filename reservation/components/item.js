@@ -6,8 +6,10 @@ const Item = (props) => {
 
     return (
       <tr>
-        <td><i className="glyphicon glyphicon-plus" onClick = {() => props.onReservation(props.item, price)} /></td>
-        <td>{props.item.title}</td>
+        <td>
+        <i className="glyphicon glyphicon-plus" onClick = {() => props.onReservation(props.item, price)} />
+        {" " + props.item.title}
+        </td>
         <td>{props.item.priceHour}</td>
       </tr>
     );

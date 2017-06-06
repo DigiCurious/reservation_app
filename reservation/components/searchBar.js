@@ -5,7 +5,7 @@ class SearchBar extends Component{
   render(){
     return (
       <form>
-        <input
+        <input className="form-control"
           type="text"
           placeholder="Search..."
           value={this.props.filterText}

@@ -2,11 +2,14 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-    entry: './components/newreservation.js',
+    entry: {
+    'app': './components/newreservation.js',
+    'catalog': './components/catalog.js'
+    },
 
     output: {
         path: path.resolve(__dirname, './public/dist'),
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
 
     resolve: {

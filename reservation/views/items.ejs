@@ -5,10 +5,11 @@
 	window.props = {items: '<%- JSON.stringify(items) %>',
 					to: '<%- to %>',
 					from: '<%- from %>',
-					time: <%- time %>
+					time: <%- time %>,
+					user: '<%- JSON.stringify(user) %>'
 					};
 </script>
-<script src="/dist/bundle.js"></script>
+<script src="/dist/app.js"></script>
 
 
 <% include ./partials/footer %>

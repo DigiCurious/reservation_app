@@ -7,7 +7,7 @@ const ReservedItem = (props) => {
 
 	return (
             <tr>
-                <td><i className="glyphicon glyphicon-minus" onClick = {() => props.removeReservation(index, price)} />{props.item.title}</td>
+                <td><i className="glyphicon glyphicon-minus" onClick = {() => props.removeReservation(index, price)} />{" " + props.item.title}</td>
                 <td><input type="hidden" value={props.item._id} name="id" />{props.item.priceHour * props.time}</td>
             </tr>
 	); 

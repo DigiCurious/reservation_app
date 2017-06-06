@@ -1,55 +1,11 @@
 <% include ./partials/header %>
 
-<div class="container">
-    
-<h1>Items for rental</h1>
-<%if(admin == true){%>
-<a href="/admin/add" class="btn btn-default">Add New Items</a>
-<% } %>
-<a href="/reservation/new/dates" class="btn btn-default">Make Reservation</a>
+<div class="container"></div>
 
-<table class="table">
-    <tbody class="table table-hover">  
-        <tr>
-            <th>Item</th><th>price/h</th>
-        </tr>
-        <tr>
-            <td>CAMERAS</td><td></td>
-        </tr>
-
-<%items.forEach(function(item){%>
-    <%if(item.category == "Camera"){%>
-                <tr>
-                    <td><a href="/catalog/<%=item._id%>"><%=item.title%></a></td><td><%=item.priceHour%></td>
-                </tr>
-<% } %>
-<% }); %>
-        <tr>
-            <td>LIGHTS</td><td></td>
-        </tr>
-<%items.forEach(function(item){%>
-    <%if(item.category == "Lights"){%>
-                <tr>
-                    <td><a href="/catalog/<%=item._id%>"><%=item.title%></a></td><td><%=item.priceHour%></td>
-                </tr>
-<% } %>
-<% }); %>
-         <tr>
-            <td>STANDS</td><td></td>
-        </tr>
-
-<%items.forEach(function(item){%>
-    <%if(item.category == "Stands"){%>
-            
-                <tr>
-                    <td><a href="/catalog/<%=item._id%>"><%=item.title%></a></td><td><%=item.priceHour%></td>
-                </tr>
-<% } %>
-<% }); %>
-
-    </tbody>
-</table>
-
-</div>
-
+<script>
+    window.props = {
+                    items: '<%- JSON.stringify(items) %>'
+                    };
+</script>
+<script src="/dist/catalog.js"></script>
 <% include ./partials/footer %>

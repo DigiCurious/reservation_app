@@ -158,6 +158,12 @@ app.get("/reservation/new/items", function(req,res){
 
                         var time = (Date.parse(req.query.to) - Date.parse(req.query.from))/3600/1000;
                         
+                        if(time >= 8 && time <= 24){
+                            time = 8;
+                        }else{
+                            time = Math.floor(time/24)*8+(time%24)
+                        }
+                        
 
                         var isReserved = reservations.reduce(function (accumulator, reservation) {
                                 accumulator[reservation.itemId] = true;
@@ -173,7 +179,7 @@ app.get("/reservation/new/items", function(req,res){
                                     return isReserved[item._id] !== true;
                                 });
                                 console.log("available items: " + availableItems);
-                                res.render("items", {time: time, items:availableItems, from:req.query.from, to:req.query.to});
+                                res.render("items", {time: time, items:availableItems, from:req.query.from, to:req.query.to, user: req.user});
                             }
                         });
                         }
@@ -377,7 +383,7 @@ app.put("/reservation/:batchId", function(req,res){
            
 //ADMIN ROUTES
 
-app.get("/admin", isLoggedIn, ifAdmin, function(req,res){
+app.get("/reservations", isLoggedIn, ifAdmin, function(req,res){
     
 /*var reservationsWithItems = [];
     Reservation.find({}, function(err, reservations){
@@ -407,6 +413,7 @@ app.get("/admin", isLoggedIn, ifAdmin, function(req,res){
                                 acc[reservation.batchId].push(reservation);
                                 return acc;
                             }, {});
+                            //console.log(reservationsByBatchId.BdLS8[0].clientId.username);
                             res.render("reservations", {reservationsByBatchId: reservationsByBatchId});
                             }
                         });
