@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Item = (props) => {
+const ItemDetails = (props) => {
 
 	var price = props.item.priceHour * props.time;
 
